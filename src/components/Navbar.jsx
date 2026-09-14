@@ -1,38 +1,33 @@
-import { Link } from 'react-router-dom';
-
-export default function Navbar() {
+function Navbar() {
   return (
-    <header className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        
-    
-        <div>
-          <Link to="/" className="text-xl font-bold text-gray-800">
-            ClothStore
-          </Link>
-        </div>
+    <nav className="sticky top-0 z-50 flex h-20 items-center justify-between border-b bg-white px-6 md:px-12 lg:px-20">
 
-        {/* Links */}
-        <ul className="flex space-x-6 text-gray-600 font-medium">
-          <li>
-            <Link to="/" className="hover:text-black">Home</Link>
-          </li>
-          <li>
-            <Link to="/shop" className="hover:text-black">Shop</Link>
-          </li>
-          <li>
-            <Link to="/categories" className="hover:text-black">Categories</Link>
-          </li>
-        </ul>
-
-        
-        <div>
-          <Link to="/cart" className="bg-black text-white px-4 py-2 rounded text-sm">
-            Cart (0)
-          </Link>
-        </div>
-
+      <div className="text-2xl font-bold tracking-[4px]">
+        VEYRA
       </div>
-    </header>
+
+      <div className="hidden gap-8 md:flex">
+        <a
+          href="#home"
+          className="text-sm transition hover:text-gray-500"
+        >
+          Home
+        </a>
+
+        <a
+          href="#categories"
+          className="text-sm transition hover:text-gray-500"
+        >
+          Categories
+        </a>
+      </div>
+
+      <button className="bg-black px-5 py-2.5 text-sm text-white transition hover:bg-gray-700">
+        Login
+      </button>
+
+    </nav>
   );
 }
+
+export default Navbar;
