@@ -31,7 +31,7 @@ function Hero() {
       <div className="w-full flex-1">
 
         <img
-          src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=80"
+          src="https://plus.unsplash.com/premium_photo-1683141052679-942eb9e77760?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Fashion collection"
           className="h-[400px] w-full object-cover md:h-[500px]"
         />
