@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import { useShop } from '../context/ShopContext';
 
 export default function CartPage() {
-    const { cart, removeFromCart, addToCart } = useShop();
+    const { cart, removeFromCart, addToCart, decreaseQuantity } = useShop();
 
     // Price string (jaise "₹1,299") ko number mein convert karke total calculate karna
     const subtotal = cart.reduce((total, item) => {
@@ -41,14 +41,32 @@ export default function CartPage() {
                                     <div className="flex-grow">
                                         <h3 className="text-base font-medium text-gray-900">{item.name}</h3>
                                         <p className="mt-1 text-sm font-semibold text-gray-700">{item.price}</p>
-                                        <p className="mt-1 text-xs text-gray-500">Quantity: {item.quantity}</p>
+                                        <div className="mt-2 flex items-center gap-3">
+                                            <div className="flex items-center border border-gray-300 rounded">
+                                                <button
+                                                    onClick={() => decreaseQuantity(item.id)}
+                                                    className="px-2.5 py-0.5 text-sm hover:bg-gray-100 transition"
+                                                    title="Decrease"
+                                                >
+                                                    -
+                                                </button>
+                                                <span className="px-3 py-0.5 text-xs font-semibold">{item.quantity}</span>
+                                                <button
+                                                    onClick={() => addToCart(item)}
+                                                    className="px-2.5 py-0.5 text-sm hover:bg-gray-100 transition"
+                                                    title="Increase"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                            <button
+                                                onClick={() => removeFromCart(item.id)}
+                                                className="text-xs text-red-500 transition hover:text-red-700 underline"
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
                                     </div>
-                                    <button
-                                        onClick={() => removeFromCart(item.id)}
-                                        className="text-sm text-red-500 transition hover:text-red-700 px-3 py-1"
-                                    >
-                                        Remove
-                                    </button>
                                 </div>
                             ))}
                         </div>

@@ -15,36 +15,52 @@ function Navbar() {
       </Link>
 
       {/* Nav Links */}
-      <div className="hidden gap-8 md:flex">
+      <div className="hidden items-center gap-8 md:flex">
         <Link to="/" className="text-sm text-gray-300 transition hover:text-white">
           Home
         </Link>
         <Link to="/categories" className="text-sm text-gray-300 transition hover:text-white">
           Categories
         </Link>
-      </div>
-
-      {/* Right Icons / Actions */}
-      <div className="flex items-center gap-6">
-        {/* Wishlist Link */}
         <Link to="/wishlist" className="relative text-sm text-gray-300 transition hover:text-white">
           Wishlist
           {wishlist.length > 0 && (
-            <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
+            <span className="absolute -right-3 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
               {wishlist.length}
             </span>
           )}
         </Link>
-
-        {/* Cart Link */}
         <Link to="/cart" className="relative text-sm text-gray-300 transition hover:text-white">
           Bag
           {cartCount > 0 && (
-            <span className="absolute -right-3 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
+            <span className="absolute -right-4 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
               {cartCount}
             </span>
           )}
         </Link>
+      </div>
+
+      {/* Right Actions */}
+      <div className="flex items-center gap-5">
+        {/* Mobile View Wishlist & Bag */}
+        <div className="flex items-center gap-5 md:hidden">
+          <Link to="/wishlist" className="relative text-sm text-gray-300 transition hover:text-white">
+            Wishlist
+            {wishlist.length > 0 && (
+              <span className="absolute -right-2.5 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
+                {wishlist.length}
+              </span>
+            )}
+          </Link>
+          <Link to="/cart" className="relative text-sm text-gray-300 transition hover:text-white">
+            Bag
+            {cartCount > 0 && (
+              <span className="absolute -right-3 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[10px] font-bold text-black">
+                {cartCount}
+              </span>
+            )}
+          </Link>
+        </div>
 
         {/* Login Button */}
         <Link
