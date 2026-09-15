@@ -39,6 +39,19 @@ export function ShopProvider({ children }) {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // Decrease Quantity from Cart
+  const decreaseQuantity = (id) => {
+    setCart((prevCart) => {
+      const existing = prevCart.find((item) => item.id === id);
+      if (existing && existing.quantity > 1) {
+        return prevCart.map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        );
+      }
+      return prevCart.filter((item) => item.id !== id);
+    });
+  };
+
   // Toggle Wishlist Function
   const toggleWishlist = (product) => {
     setWishlist((prevWishlist) => {
@@ -52,7 +65,7 @@ export function ShopProvider({ children }) {
 
   return (
     <ShopContext.Provider
-      value={{ cart, wishlist, addToCart, removeFromCart, toggleWishlist }}
+      value={{ cart, wishlist, addToCart, removeFromCart, decreaseQuantity, toggleWishlist }}
     >
       {children}
     </ShopContext.Provider>

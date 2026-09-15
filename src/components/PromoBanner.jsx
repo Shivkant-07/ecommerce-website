@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function PromoBanner() {
   return (
     <section className="relative bg-black px-6 py-24 text-white md:px-12 lg:px-20">
@@ -11,9 +13,12 @@ export default function PromoBanner() {
         <p className="mx-auto mb-8 max-w-lg text-gray-300">
           Discover handpicked seasonal favorites with massive discounts. Upgrade your wardrobe today before stocks run out.
         </p>
-        <button className="bg-white px-8 py-4 text-sm font-medium text-black transition hover:bg-gray-200">
+        <Link
+          to="/categories"
+          className="inline-block bg-white px-8 py-4 text-sm font-medium text-black transition hover:bg-gray-200"
+        >
           Explore Collection
-        </button>
+        </Link>
       </div>
     </section>
   );

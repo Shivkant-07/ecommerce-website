@@ -254,7 +254,11 @@ function Register() {
           {/* Register Button */}
           <button
             type="submit"
-            className="w-full rounded-lg bg-black py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-gray-800 hover:shadow-lg"
+            className="w-full rounded-lg py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            style={{
+              background:
+                "linear-gradient(90deg, rgb(255, 187, 78) 0%, rgb(247, 74, 76) 100%)",
+            }}
           >
             Create Account
           </button>
