@@ -5,7 +5,7 @@ import { useShop } from '../context/ShopContext';
 export default function CartPage() {
     const { cart, removeFromCart, addToCart } = useShop();
 
-    // Price string (jaise "₹1,299") ko number mein convert karke total calculate karna
+    
     const subtotal = cart.reduce((total, item) => {
         const cleanPrice = Number(item.price.replace(/[^\d]/g, ""));
         return total + cleanPrice * item.quantity;
@@ -53,7 +53,7 @@ export default function CartPage() {
                             ))}
                         </div>
 
-                        {/* Order Summary Box */}
+                        
                         <div className="bg-gray-50 p-6 h-fit border border-gray-200">
                             <h3 className="text-lg font-bold mb-4">Order Summary</h3>
                             <div className="flex justify-between mb-3 text-sm text-gray-600">

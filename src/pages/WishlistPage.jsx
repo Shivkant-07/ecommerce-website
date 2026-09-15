@@ -35,7 +35,7 @@ export default function WishlistPage() {
                                         alt={item.name}
                                         className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                                     />
-                                    {/* Remove from Wishlist Button */}
+                            
                                     <button
                                         onClick={() => toggleWishlist(item)}
                                         className="absolute top-3 right-3 rounded-full bg-white/90 p-2 text-black transition hover:bg-white shadow"
@@ -48,7 +48,7 @@ export default function WishlistPage() {
                                     <h3 className="text-base font-medium text-gray-900">{item.name}</h3>
                                     <p className="mt-1 text-sm font-semibold text-gray-700">{item.price}</p>
 
-                                    {/* Move to Bag Button */}
+                                hn
                                     <button
                                         onClick={() => {
                                             addToCart(item);

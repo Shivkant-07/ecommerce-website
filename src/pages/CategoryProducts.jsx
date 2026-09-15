@@ -61,7 +61,7 @@ export default function CategoryProducts() {
                                         alt={item.name}
                                         className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                                     />
-                                    {/* Wishlist Button */}
+                                
                                     <button
                                         onClick={() => toggleWishlist(item)}
                                         className="absolute top-3 right-3 rounded-full bg-white/80 p-2 text-black transition hover:bg-white shadow"
@@ -78,7 +78,7 @@ export default function CategoryProducts() {
                                         {item.price}
                                     </p>
 
-                                    {/* Add to Bag Button */}
+                    
                                     <button
                                         onClick={() => addToCart(item)}
                                         className="mt-3 w-full bg-black py-2.5 text-sm text-white transition hover:bg-gray-800"
