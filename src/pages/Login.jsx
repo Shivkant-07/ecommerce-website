@@ -28,6 +28,8 @@ function Login() {
       console.log("Login form submitted");
       console.log("Email:", email);
       console.log("Password:", password);
+
+      alert("Login successful!");
     }
   };
 
@@ -49,8 +51,6 @@ function Login() {
           <p className="mt-2 text-xs tracking-[3px] text-gray-500">
             MODERN FASHION
           </p>
-
-          
         </div>
 
         {/* Login Form */}
@@ -70,11 +70,12 @@ function Login() {
                 setEmailError("");
               }}
               placeholder="Enter your email"
-              className={`w-full rounded-lg border px-4 py-3 text-sm outline-none transition duration-300 focus:ring-2 ${
-                emailError
+              className={
+                "w-full rounded-lg border px-4 py-3 text-sm outline-none transition duration-300 focus:ring-2 " +
+                (emailError
                   ? "border-red-500 focus:ring-red-100"
-                  : "border-gray-300 focus:border-black focus:ring-gray-100"
-              }`}
+                  : "border-gray-300 focus:border-black focus:ring-gray-100")
+              }
             />
 
             {emailError && (
@@ -99,11 +100,12 @@ function Login() {
                   setPasswordError("");
                 }}
                 placeholder="Enter your password"
-                className={`w-full rounded-lg border px-4 py-3 pr-16 text-sm outline-none transition duration-300 focus:ring-2 ${
-                  passwordError
+                className={
+                  "w-full rounded-lg border px-4 py-3 pr-16 text-sm outline-none transition duration-300 focus:ring-2 " +
+                  (passwordError
                     ? "border-red-500 focus:ring-red-100"
-                    : "border-gray-300 focus:border-black focus:ring-gray-100"
-                }`}
+                    : "border-gray-300 focus:border-black focus:ring-gray-100")
+                }
               />
 
               {/* Show / Hide */}
@@ -135,27 +137,29 @@ function Login() {
               Remember me
             </label>
 
-            <button
-              type="button"
-              className="transition hover:text-black"
+            {/* Forgot Password */}
+            <Link
+              to="/forgot-password"
+              className="font-medium text-gray-500 transition hover:text-black hover:underline"
             >
               Forgot Password?
-            </button>
+            </Link>
 
           </div>
 
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full rounded-lg bg-black py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-gray-800 hover:shadow-lg"
+            className="w-full rounded-lg py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            style={{
+              background:
+                "linear-gradient(90deg, rgb(255, 187, 78) 0%, rgb(247, 74, 76) 100%)",
+            }}
           >
             Login
           </button>
 
         </form>
-
-    
-      
 
         {/* Create Account */}
         <div className="mt-7 text-center text-sm text-gray-500">
